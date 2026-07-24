@@ -1,0 +1,93 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+
+
+# ==========================
+# Python / Django
+# ==========================
+backend/venv/
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/*.sqlite3
+backend/db.sqlite3
+
+# Python cache
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# ==========================
+# Django media & logs
+# ==========================
+backend/media/
+*.log
+
+# ==========================
+# Environment variables
+# ==========================
+.env
+.env.*
+backend/.env
+frontend/.env
+
+# ==========================
+# Node / React / Vite
+# ==========================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+
+# ==========================
+# OS files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Temporary files
+# ==========================
+*.tmp
+*.bak
+*.swp
+
+backend/venv/
+frontend/node_modules/
+frontend/dist/
+backend/db.sqlite3
+__pycache__/
+*.pyc
