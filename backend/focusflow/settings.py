@@ -212,9 +212,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # =========================================================
 
 CORS_ALLOWED_ORIGINS = [
-    origin.strip()
+    origin.strip().rstrip("/")
     for origin in os.environ.get(
         "CORS_ALLOWED_ORIGINS",
+        "http://localhost:5173"
+    ).split(",")
+    if origin.strip()
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip().rstrip("/")
+    for origin in os.environ.get(
+        "CSRF_TRUSTED_ORIGINS",
         "http://localhost:5173"
     ).split(",")
     if origin.strip()
