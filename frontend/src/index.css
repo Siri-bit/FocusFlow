@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Light theme */
+  --color-bg-base: #f8fafc;
+  --color-bg-subtle: #f1f5f9;
+  --color-charcoal: #ffffff;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+
+  --color-accent: #3b82f6;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Very subtle light grid */
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(15, 23, 42, 0.025) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.025) 1px,
+        transparent 1px
+      );
+
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl;
+  }
+}
