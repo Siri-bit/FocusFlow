@@ -12,11 +12,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+<<<<<<< HEAD
 import os
 import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv()
+=======
+>>>>>>> d763c6ecd265dabce2f36472b1a12ac3d7f3673c
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,12 +36,21 @@ SIMPLE_JWT = {
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-qe$herjoyh#)x0n$5j5r7+a78e#$e%9$19$@&*bb@12o)o#pa2')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['*']
+=======
+SECRET_KEY = 'django-insecure-qe$herjoyh#)x0n$5j5r7+a78e#$e%9$19$@&*bb@12o)o#pa2'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+>>>>>>> d763c6ecd265dabce2f36472b1a12ac3d7f3673c
 
 
 # Application definition
@@ -59,7 +71,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+<<<<<<< HEAD
     'whitenoise.middleware.WhiteNoiseMiddleware',
+=======
+>>>>>>> d763c6ecd265dabce2f36472b1a12ac3d7f3673c
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -96,7 +111,11 @@ WSGI_APPLICATION = 'focusflow.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+<<<<<<< HEAD
         'NAME': 'focusflow_db',
+=======
+        'NAME': 'productivity_app',
+>>>>>>> d763c6ecd265dabce2f36472b1a12ac3d7f3673c
         'USER': 'postgres',
         'PASSWORD': '147258',
         'HOST': 'localhost',
@@ -140,9 +159,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+=======
+>>>>>>> d763c6ecd265dabce2f36472b1a12ac3d7f3673c
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -15,7 +15,11 @@ router.register(r'pomodoros', PomodoroViewSet, basename='pomodoro')
 # router = DefaultRouter()
 # router.register(r'tasks', TaskViewSet, basename='task')
 
+<<<<<<< HEAD
 
+=======
+urlpatterns = router.urls
+>>>>>>> d763c6ecd265dabce2f36472b1a12ac3d7f3673c
 
 
 from django.urls import path, include
