@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get(
         "ALLOWED_HOSTS",
+        "*",
         "localhost,127.0.0.1"
     ).split(",")
     if host.strip()
@@ -129,7 +130,8 @@ else:
             ),
             "HOST": os.environ.get(
                 "DB_HOST",
-                "localhost"
+                "localhost",
+                "*"
             ),
             "PORT": os.environ.get(
                 "DB_PORT",
