@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "corsheaders",
     "drf_yasg",
+    "corsheaders",
+    "rest_framework",
 
     "core",
 ]
@@ -62,8 +64,9 @@ INSTALLED_APPS = [
 # =========================================================
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+    
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -218,7 +221,7 @@ CORS_ALLOWED_ORIGINS = [
     for origin in os.environ.get(
         "CORS_ALLOWED_ORIGINS",
         "http://localhost:5173",
-        "*"
+        "https://focus-flow-two-ruddy.vercel.app"
     ).split(",")
     if origin.strip()
 ]
@@ -227,6 +230,7 @@ CSRF_TRUSTED_ORIGINS = [
     origin.strip().rstrip("/")
     for origin in os.environ.get(
         "CSRF_TRUSTED_ORIGINS",
+        "https://focus-flow-two-ruddy.vercel.app",
         "http://localhost:5173"
     ).split(",")
     if origin.strip()
