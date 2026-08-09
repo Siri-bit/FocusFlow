@@ -29,8 +29,7 @@ ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get(
         "ALLOWED_HOSTS",
-        "*",
-        "localhost,127.0.0.1"
+        "localhost,127.0.0.1,focusflow-backend-xm3t.onrender.com"
     ).split(",")
     if host.strip()
 ]
@@ -48,13 +47,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+    # Third-party apps
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders",
     "drf_yasg",
-    "corsheaders",
-    "rest_framework",
 
+    # Local apps
     "core",
 ]
 
@@ -64,9 +63,11 @@ INSTALLED_APPS = [
 # =========================================================
 
 MIDDLEWARE = [
-    
     "django.middleware.security.SecurityMiddleware",
+
+    # CORS middleware must be near the top
     "corsheaders.middleware.CorsMiddleware",
+
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -133,8 +134,7 @@ else:
             ),
             "HOST": os.environ.get(
                 "DB_HOST",
-                "localhost",
-                "*"
+                "localhost"
             ),
             "PORT": os.environ.get(
                 "DB_PORT",
@@ -220,18 +220,21 @@ CORS_ALLOWED_ORIGINS = [
     origin.strip().rstrip("/")
     for origin in os.environ.get(
         "CORS_ALLOWED_ORIGINS",
-        "http://localhost:5173",
-        "https://focus-flow-two-ruddy.vercel.app"
+        "http://localhost:5173,https://focus-flow-two-ruddy.vercel.app"
     ).split(",")
     if origin.strip()
 ]
+
+
+# =========================================================
+# CSRF
+# =========================================================
 
 CSRF_TRUSTED_ORIGINS = [
     origin.strip().rstrip("/")
     for origin in os.environ.get(
         "CSRF_TRUSTED_ORIGINS",
-        "https://focus-flow-two-ruddy.vercel.app",
-        "http://localhost:5173"
+        "http://localhost:5173,https://focus-flow-two-ruddy.vercel.app"
     ).split(",")
     if origin.strip()
 ]
